@@ -6,6 +6,37 @@
         <title>Hello!</title>
     </head>
     <body>
-        <p><a href="@{Secure.login()}">Login</a></p>
+        <!--<p><a href="@{Secure.login()}">Login</a></p>-->
+        <nav class="cd-vertical-nav">
+            <ul>
+                <li><a href="#section1" class="active"><span class="label">Inicio</span></a></li>
+                <li><a href="#section2"><span class="label">Galería</span></a></li>
+                <li><a href="#section3"><span class="label">Login</span></a></li>
+            </ul>
+        </nav><!-- .cd-vertical-nav -->
+
+        <button class="cd-nav-trigger cd-image-replace">Abrir menú<span aria-hidden="true"></span></button>
+
+        <section id="section1" class="cd-section">
+            <div class="content-wrapper">
+                <h1>Vertical Fixed Navigation <b>#2</b></h1>
+                <a href="#section2" class="cd-scroll-down cd-image-replace">scroll</a>
+            </div>
+        </section><!-- cd-section -->
+
+        <section id="section2" class="cd-section">
+            <div class="content-wrapper">
+                <h2>Events</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto numquam, totam iusto officia earum perferendis, culpa ad atque eveniet praesentium nobis expedita similique beatae tenetur. Distinctio vel tenetur, id cum.</p>
+                <a href="#section3" class="cd-scroll-down cd-image-replace">scroll</a>
+            </div>
+        </section><!-- cd-section -->
+
+        <section id="section3" class="cd-section">
+            <div class="content-wrapper">
+                <h2>Help</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto numquam, totam iusto officia earum perferendis, culpa ad atque eveniet praesentium nobis expedita similique beatae tenetur. Distinctio vel tenetur, id cum.</p>
+            </div>
+        </section><!-- cd-section -->
     </body>
 </html>
