@@ -34,18 +34,16 @@
                 <h3 class="heading-section">Galería</h3>
                 <div class="cd-slider-wrapper">
                     <ul class="cd-slider">
-                        <li class="visible">
-                            <div class="cd-svg-wrapper">
+                        #{list items: imagenes, as: 'imagen'}
+                            <li class="visible">
                                 <div class="cd-svg-wrapper">
-                                    #{list items: imagenes, as: 'imagen'}
+                                    <div class="cd-svg-wrapper">
                                         <img #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else}  width="250" height="250" alt="${imagen?.descripcion}" >
                                         <p><a href="@{imageFor(imagen?.idWImagen)}">${imagen?.descripcion}</a></p>
-                                    #{/list}
-                                    <h2>Titulo de Imagen Generico</h2>
-                                    <p>Descripcion de Imagen Generico</p>
-                                </div> <!-- .cd-svg-wrapper -->
-                            </div>
-                        </li>
+                                    </div> <!-- .cd-svg-wrapper -->
+                                </div>
+                            </li>
+                        #{/list}
                     </ul>
                     
                     <ul class="cd-slider-navigation">
@@ -54,7 +52,9 @@
                     </ul> <!-- .cd-slider-navigation -->
 
                     <ol class="cd-slider-controls">
-                        <li class="selected"><a href="#0"><em>Item 1</em></a></li>
+                        #{list items: imagenes, as: 'imagen'}
+                            <li class="selected"><a href="#${imagen_index - 1}"><em>Item ${imagen_index - 1}</em></a></li>
+                        #{/list}
                     </ol> <!-- .cd-slider-controls -->
                 </div>
             </div>
