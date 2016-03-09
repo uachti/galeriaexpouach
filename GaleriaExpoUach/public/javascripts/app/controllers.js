@@ -57,3 +57,34 @@ app.controller('thumbnailCtrl', [function() {
             return URL.createObjectURL(i);
         }
     }]);
+
+app.factory('galeriaService', ['$rootScope', function($rootScope) {
+        var service = {};
+        service.url = {};
+
+        service.select = function(id) {
+            service.url = '/image/' + id;
+            broadcastImageSelected();
+        };
+
+        var broadcastImageSelected = function() {
+            console.log('broadcast');
+            $rootScope.$broadcast('imageSelected');
+        };
+        
+        return service;
+    }]);
+
+app.controller('galeriaCtrl', ['$scope', 'galeriaService', function($scope, galeriaService) {
+        $scope.selectImage = function(id) {
+            console.log('click!');
+            galeriaService.select(id);
+        };
+        
+        $scope.$on('imageSelected', function() {
+            $scope.url = galeriaService.url;
+            console.log('$on');
+            console.log('$scope.url');
+            console.log($scope.url);
+        });
+    }]);

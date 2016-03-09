@@ -36,7 +36,7 @@
 		<a href="#section2" class="cd-scroll-down cd-img-replace">scroll down</a>
 	</section><!-- cd-section -->
 
-        <section id="section2" class="cd-section">
+        <section id="section2" class="cd-section" ng-controller="galeriaCtrl">
             <div class="content-wrapper">
                 <h3 class="heading-section">Galería</h3>
                 <div class="cd-slider-wrapper">
@@ -44,13 +44,14 @@
                         #{list items: imagenes, as: 'imagen'}
                         <li class="visible">
                             <div class="cd-svg-wrapper">
-                                <div class="cd-svg-wrapper">
-                                    <img #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else}  width="250" height="250" alt="${imagen?.descripcion}" clip-path="url(#cd-image-1)" xlink:href="img/img-1.jpg">
-                                        <p><a href="@{imageFor(imagen?.idWImagen)}">${imagen?.descripcion}</a></p>
+                                <div class="cd-svg-wrapper">    
+                                    <img ng-click="selectImage('${imagen?.idWImagen}')" #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else}  width="250" height="250" alt="${imagen?.descripcion}" >
+                                    <p><a href="@{imageFor(imagen?.idWImagen)}">${imagen?.descripcion}</a></p>
                                 </div> <!-- .cd-svg-wrapper -->
                             </div>
                         </li>
                         #{/list}
+                        <image-big url="url"></imagen>
                     </ul>
 
                     <ul class="cd-slider-navigation">
@@ -79,7 +80,7 @@
                     <form id="login-form" class="cd-form" action="@{controllers.Secure.authenticate()}" enctype="multipart/form-data" method="POST" accept-charset="UFT-8">
                         <p class="fieldset">
                             <label class="image-replace cd-email" for="signin-email">Usuario</label>
-                            <input class="full-width has-padding has-border" id="signin-email" name="username" type="email" placeholder="Username">
+                            <input class="full-width has-padding has-border" id="signin-email" name="username" type="text" placeholder="Username">
                             <span class="cd-error-message">Mensaje de Error!</span>
                         </p>
 
