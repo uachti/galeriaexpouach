@@ -6,28 +6,35 @@
         <title>Hello!</title>
     </head>
     <body>
-        <header class="header-top">
-            <nav class="main-nav">
-                <ul>
-                    <a class="cd-signin" href="">Iniciar Sesión</a>
-                </ul>
-            </nav>
-        </header>
-        <nav class="cd-vertical-nav">
+        <nav id="cd-vertical-nav">
             <ul>
-                <li><a href="#section1" class="active"><span class="label">Inicio</span></a></li>
-                <li><a href="#section2" ><span class="label">Galería</span></a></li>
+                <li>
+                    <a href="#section1" data-number="1">
+                        <span class="cd-dot"></span>
+                        <span class="cd-label">Página Inicial</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#section2" data-number="2">
+                        <span class="cd-dot"></span>
+                        <span class="cd-label">Galería</span>
+                    </a>
+                </li>
             </ul>
         </nav>
-
-        <button class="cd-nav-trigger cd-image-replace">Menú<span aria-hidden="true"></span></button>
-
+        <a class="cd-nav-trigger cd-img-replace">Menu<span></span></a>
+        
         <section id="section1" class="cd-section">
-            <div class="content-wrapper">
-                <h1>Vertical Fixed Navigation <b>#2</b></h1>
-                <a href="#section2" class="cd-scroll-down cd-image-replace">scroll</a>
-            </div>
-        </section><!-- cd-section -->
+            <header class="header-top">
+                <nav class="main-nav">
+                    <ul>
+                        <a class="cd-signin" href="">Iniciar Sesión</a>
+                    </ul>
+                </nav>
+            </header>
+            <h1>Expo <b>UACH</b> 2016</h1>
+		<a href="#section2" class="cd-scroll-down cd-img-replace">scroll down</a>
+	</section><!-- cd-section -->
 
         <section id="section2" class="cd-section">
             <div class="content-wrapper">
@@ -35,17 +42,17 @@
                 <div class="cd-slider-wrapper">
                     <ul class="cd-slider">
                         #{list items: imagenes, as: 'imagen'}
-                            <li class="visible">
+                        <li class="visible">
+                            <div class="cd-svg-wrapper">
                                 <div class="cd-svg-wrapper">
-                                    <div class="cd-svg-wrapper">
-                                        <img #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else}  width="250" height="250" alt="${imagen?.descripcion}" >
+                                    <img #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else}  width="250" height="250" alt="${imagen?.descripcion}" clip-path="url(#cd-image-1)" xlink:href="img/img-1.jpg">
                                         <p><a href="@{imageFor(imagen?.idWImagen)}">${imagen?.descripcion}</a></p>
-                                    </div> <!-- .cd-svg-wrapper -->
-                                </div>
-                            </li>
+                                </div> <!-- .cd-svg-wrapper -->
+                            </div>
+                        </li>
                         #{/list}
                     </ul>
-                    
+
                     <ul class="cd-slider-navigation">
                         <li><a href="#0" class="next-slide">Siguiente</a></li>
                         <li><a href="#0" class="prev-slide">Anterior</a></li>
@@ -53,7 +60,7 @@
 
                     <ol class="cd-slider-controls">
                         #{list items: imagenes, as: 'imagen'}
-                            <li class="selected"><a href="#${imagen_index - 1}"><em>Item ${imagen_index - 1}</em></a></li>
+                        <li class="selected"><a href="#${imagen_index - 1}"><em>Item ${imagen_index - 1}</em></a></li>                       
                         #{/list}
                     </ol> <!-- .cd-slider-controls -->
                 </div>
@@ -65,11 +72,11 @@
             <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
                 <a href="#0" class="cd-close-form">Cerrar</a>
                 <ul class="cd-switcher">
-                    <li><a href="#0">Iniciar Sesión</a></li>
+                    <li><a href="#0"><i class="fa fa-lock"></i> Iniciar Sesión</a></li>
                 </ul>
 
                 <div id="cd-login"> <!-- log in form -->
-                    <form id="login-form" class="cd-form" action="@controllers.Secure.authenticate()" enctype="multipart/form-data" method="POST" accept-charset="UFT-8">
+                    <form id="login-form" class="cd-form" action="@{controllers.Secure.authenticate()}" enctype="multipart/form-data" method="POST" accept-charset="UFT-8">
                         <p class="fieldset">
                             <label class="image-replace cd-email" for="signin-email">Usuario</label>
                             <input class="full-width has-padding has-border" id="signin-email" name="username" type="email" placeholder="Username">
@@ -89,7 +96,7 @@
                         </p>
 
                         <p class="fieldset">
-                            <input class="full-width" type="submit" value="Acceder">
+                            <button class="full-width" type="submit" value="Acceder">Acceder</button>
                         </p>
                     </form>
                 </div> <!-- cd-login -->

@@ -109,8 +109,16 @@ header[role=banner] #cd-logo {
   }
   .main-nav a.cd-signin, .main-nav a.cd-signup {
     padding: .3em .5em;
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 2px;
+    text-decoration: none;
+  }
+  .main-nav a.cd-signin:hover, .main-nav a.cd-signup:hover {
+      //padding: .4em .6em;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 2px;
+      text-decoration: none;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
   }
   .main-nav a.cd-signup {
     background: #2f889a;
@@ -196,8 +204,11 @@ xsigin/signup popup
   color: #809191;
 }
 .cd-user-modal-container .cd-switcher a.selected {
-  background: #FFF;
-  color: #505260;
+    background: #FFF;
+    color: #c0a672;
+    font-size: 30px;
+    text-align: left;
+    padding: 5px 0 0 30px;
 }
 @media only screen and (min-width: 600px) {
   .cd-user-modal-container {
@@ -288,21 +299,24 @@ xsigin/signup popup
   /* space left for the HIDE button */
   padding-right: 65px;
 }
-.cd-form input[type=submit] {
-  padding: 16px 0;
-  cursor: pointer;
-  background: #2f889a;
-  color: #FFF;
-  font-weight: bold;
-  border: none;
+.cd-form button[type=submit] {
+    padding: 16px 16px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 2px;
+    font-size: 13px;
+    background: rgba(62, 57, 71,.8);
+    color: #FFF;
+    font-weight: 400;
+    border: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
 }
-.no-touch .cd-form input[type=submit]:hover, .no-touch .cd-form input[type=submit]:focus {
-  background: #3599ae;
+.no-touch .cd-form button[type=submit]:hover, .no-touch .cd-form button[type=submit]:focus {
+  background: rgba(62, 57, 71,.9);
   outline: none;
 }
 .cd-form .hide-password {

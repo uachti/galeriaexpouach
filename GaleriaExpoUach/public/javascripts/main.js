@@ -1,61 +1,52 @@
 $(document).ready(function($){
     /******************** VERTICAL FIXED NAVIGATION ********************/
-    var scrolling = false;
     var contentSections = $('.cd-section'),
-            verticalNavigation = $('.cd-vertical-nav'),
-            navigationItems = verticalNavigation.find('a'),
-            navTrigger = $('.cd-nav-trigger'),
-            scrollArrow = $('.cd-scroll-down');
+            navigationItems = $('#cd-vertical-nav a');
 
-    $(window).on('scroll', checkScroll);
-
-    //smooth scroll to the selected section
-    verticalNavigation.on('click', 'a', function (event) {
-        event.preventDefault();
-        smoothScroll($(this.hash));
-        verticalNavigation.removeClass('open');
+    updateNavigation();
+    $(window).on('scroll', function () {
+        updateNavigation();
     });
 
-    //smooth scroll to the second section
-    scrollArrow.on('click', function (event) {
+    //smooth scroll to the section
+    navigationItems.on('click', function (event) {
+        event.preventDefault();
+        smoothScroll($(this.hash));
+    });
+    //smooth scroll to second section
+    $('.cd-scroll-down').on('click', function (event) {
         event.preventDefault();
         smoothScroll($(this.hash));
     });
 
-    // open navigation if user clicks the .cd-nav-trigger - small devices only
-    navTrigger.on('click', function (event) {
-        event.preventDefault();
-        verticalNavigation.toggleClass('open');
+    //open-close navigation on touch devices
+    $('.touch .cd-nav-trigger').on('click', function () {
+        $('.touch #cd-vertical-nav').toggleClass('open');
+
+    });
+    //close navigation on touch devices when selectin an elemnt from the list
+    $('.touch #cd-vertical-nav a').on('click', function () {
+        $('.touch #cd-vertical-nav').removeClass('open');
     });
 
-    function checkScroll() {
-        if (!scrolling) {
-            scrolling = true;
-            (!window.requestAnimationFrame) ? setTimeout(updateSections, 300) : window.requestAnimationFrame(updateSections);
-        }
-    }
-
-    function updateSections() {
-        var halfWindowHeight = $(window).height() / 2,
-                scrollTop = $(window).scrollTop();
+    function updateNavigation() {
         contentSections.each(function () {
-            var section = $(this),
-                    sectionId = section.attr('id'),
-                    navigationItem = navigationItems.filter('[href^="#' + sectionId + '"]');
-            ((section.offset().top - halfWindowHeight < scrollTop) && (section.offset().top + section.height() - halfWindowHeight > scrollTop))
-                    ? navigationItem.addClass('active')
-                    : navigationItem.removeClass('active');
+            $this = $(this);
+            var activeSection = $('#cd-vertical-nav a[href="#' + $this.attr('id') + '"]').data('number') - 1;
+            if (($this.offset().top - $(window).height() / 2 < $(window).scrollTop()) && ($this.offset().top + $this.height() - $(window).height() / 2 > $(window).scrollTop())) {
+                navigationItems.eq(activeSection).addClass('is-selected');
+            } else {
+                navigationItems.eq(activeSection).removeClass('is-selected');
+            }
         });
-        scrolling = false;
     }
 
     function smoothScroll(target) {
         $('body,html').animate(
                 {'scrollTop': target.offset().top},
-        300
+        600
                 );
     }
-
     /******************** END VERTICAL FIXED NAVIGATION ********************/
     
     
@@ -174,6 +165,12 @@ $(document).ready(function($){
     }
     /******************** END LOGIN MODAL WINDOW ********************/
     
+    
+    /******************** ANIMATED IMAGE SLIDER ********************/
+    /*
+     convert a cubic bezier value to a custom mina easing
+     http://stackoverflow.com/questions/25265197/how-to-convert-a-cubic-bezier-value-to-a-custom-mina-easing-snap-svg
+     */
     var duration = 250,
             epsilon = (1000 / 60 / duration) / 4,
             firstCustomMinaAnimation = bezier(.42, .03, .77, .63, epsilon),
@@ -372,6 +369,8 @@ $(document).ready(function($){
                 (left + width) > window.pageXOffset
                 );
     }
+    
+    /******************** END ANIMATED IMAGE SLIDER ********************/
     
     $('.cd-vertical-nav').mouseover(function(){ 
         $('.main-nav').css('margin-right', '9%');
