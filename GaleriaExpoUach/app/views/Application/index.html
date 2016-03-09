@@ -37,7 +37,10 @@
                         <li class="visible">
                             <div class="cd-svg-wrapper">
                                 <div class="cd-svg-wrapper">
-                                    <img src="http://www.wallpapereast.com/static/images/HD-Wallpapers1_Q75eDHE.jpeg"/>
+                                    #{list items: imagenes, as: 'imagen'}
+                                        <img #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else}  width="250" height="250" alt="${imagen?.descripcion}" >
+                                        <p><a href="@{imageFor(imagen?.idWImagen)}">${imagen?.descripcion}</a></p>
+                                    #{/list}
                                     <h2>Titulo de Imagen Generico</h2>
                                     <p>Descripcion de Imagen Generico</p>
                                 </div> <!-- .cd-svg-wrapper -->

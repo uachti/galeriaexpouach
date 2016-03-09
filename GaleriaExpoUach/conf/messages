@@ -1,3 +1,8 @@
 # You can specialize this file for each language.
 # For example, for French create a messages.fr file
 #
+
+
+#Image Tag
+image.tag.opciones=Opciones
+image.tag.cambiar.imagen=Cambiar Imagen

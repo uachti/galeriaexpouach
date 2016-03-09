@@ -15,6 +15,29 @@
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
     </head>
     <body>
+        #{if flash.success}
+            <div class="alert alert-success alert-dismissible nota-alert" role="alert">
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+
+                <i class="fa fa-check"></i>
+                ${flash.success.raw()}
+            </div>
+        #{/if}
+
+        #{if flash.error || error}
+            <div class="alert alert-danger alert-dismissible nota-alert" role="alert">
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+
+                <i class="fa fa-warning"></i>
+                ${error ?: flash.error.raw()}
+            </div>
+        #{/if}
         #{doLayout /}
         #{script '/lib/angular.js'/}
         #{script '/app/controllers.js'/}

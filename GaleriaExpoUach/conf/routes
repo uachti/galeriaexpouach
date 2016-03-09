@@ -4,6 +4,7 @@
 
 # Página principal de galería
 GET     /                                       Application.index
+GET     /imageFor/{idWImage}                    Application.imageFor
 
 # Secure / Security
 GET     /login                                  Secure.login
@@ -11,6 +12,7 @@ POST    /authenticate                           Secure.authenticate
 
 # Administracion
 GET     /admin                                  Administracion.admin
+POST    /upload                                 Administracion.upload
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

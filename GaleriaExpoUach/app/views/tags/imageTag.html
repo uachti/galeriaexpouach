@@ -9,6 +9,8 @@
     ------------------------------------------
     _alt               = Texto alternativo
     _defaultImgSrcPath = En caso de que no haya imagen ruta de la imagen que se mostrará por default
+    _includeOriginal   = Si se desea mantener el input con la imagen original (requiere _originalFieldName)
+    _originalFieldName = name para la imagen original si se indica _includeOriginal como truthy
 }*
 
 %{
@@ -16,7 +18,7 @@
     _defaultImgSrcPath = _defaultImgSrcPath ? _defaultImgSrcPath  : '/public/images/user-perfil.png'
 }%
 
-<div class="row" ng-controller="thumbnailCtrl">
+*{<div class="row" ng-controller="thumbnailCtrl">
     <div class="menu-content top animated fadeIn change-user-info">
         <div class="col-md-12">
             <div class="change-image profile">
@@ -28,10 +30,25 @@
                     </button>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#" id="upload_image">&{'image.tag.cambiar.imagen'}</a></li>
-                        <input id="input_image" type="file" class="nonedisplayimportant" />
-                        <input id="input_image_base64" name="${_fieldName}" type="text" class="nonedisplayimportant" #{if _imgSrcPath} value="${_imgSrcPath}" #{/if}/>
+                        //TODO: hacer clase nonedisplayimportant
+                        <input id="input_image" type="file" class="nonedisplayimportant" style="display: none"/>
+                        <input id="input_image_base64" name="${_fieldName}" type="text" class="nonedisplayimportant" style="display: none" #{if _imgSrcPath} value="${_imgSrcPath}" #{/if}/>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>}*
+<div class="row" ng-controller="thumbnailCtrl">
+    <div class="menu-content top animated fadeIn change-user-info">
+        <div class="col-md-12">
+            <div class="change-image profile">
+                <img id="thumbnail" class="img-responsive" #{if _imgSrcPath} src="${_imgSrcPath}" #{/if} #{else} src="${_defaultImgSrcPath}" #{/else}  alt="${_alt}">
+                <br/>
+                //TODO: hacer clase nonedisplayimportant?
+                <br/>
+                <input id="input_image" #{if _includeOriginal && _originalFieldName} name="${_originalFieldName}" #{/if} type="file"/>
+                <input id="input_image_base64" name="${_fieldName}" type="text" class="nonedisplayimportant" style="display: none" #{if _imgSrcPath} value="${_imgSrcPath}" #{/if}/>
             </div>
         </div>
     </div>
