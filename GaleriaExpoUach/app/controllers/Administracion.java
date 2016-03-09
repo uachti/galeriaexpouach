@@ -2,6 +2,8 @@ package controllers;
 
 import play.mvc.Controller;
 import play.mvc.With;
+//TODO: 
+//import javax.imageio.
 
 /**
  * Controlador para el área de administración de la galería.
