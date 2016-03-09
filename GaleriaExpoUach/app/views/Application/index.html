@@ -34,6 +34,10 @@
         <section id="section2" class="cd-section">
             <div class="content-wrapper">
                 <h2>Events</h2>
+                #{list items: imagenes, as: 'imagen'}
+                     <img #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else}  width="250" height="250" alt="${imagen?.descripcion}" >
+                     <p><a href="@{imageFor(imagen?.idWImagen)}">${imagen?.descripcion}</a></p>
+                #{/list}
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto numquam, totam iusto officia earum perferendis, culpa ad atque eveniet praesentium nobis expedita similique beatae tenetur. Distinctio vel tenetur, id cum.</p>
             </div>
         </section><!-- cd-section -->

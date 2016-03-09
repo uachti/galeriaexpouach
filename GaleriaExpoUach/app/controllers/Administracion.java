@@ -1,5 +1,8 @@
 package controllers;
 
+import java.util.Map;
+import java.util.Objects;
+import models.Imagen;
 import play.mvc.Controller;
 import play.mvc.With;
 //TODO: 
@@ -20,6 +23,31 @@ public class Administracion extends Controller {
      */
     public static void admin() {
         render();
+    }
+
+    /**
+     * Acción que sube una {@code Imagen}.
+     *
+     * @param imagen {@code Imagen} a subir
+     */
+    public static void upload(Imagen imagen) {
+        
+        Boolean isFileValid = Boolean.FALSE;
+        try {
+            isFileValid = imagen.wImagen.file.exists();
+        } catch (Exception e) {
+        }
+        
+        Boolean success = imagen.wImagen.validateAndSave() && imagen.validateAndSave();
+        if (success) {
+            flash.success("Se ha subido la imagen exitosamente.");
+        } else {
+            if (isFileValid) {
+                imagen.wImagen.file.delete();
+            }
+            flash.error("No fue posible subir la imagen.");
+        }
+        admin();
     }
 
 }

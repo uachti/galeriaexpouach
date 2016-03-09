@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+*{<!DOCTYPE html>
 <html>
     <head>
         <title>TODO supply a title</title>
@@ -6,9 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>
-            <p>Página de administrar contenido</p>
-            <p><input id="input_image" style="display: none"></input></p>
-        </div>
     </body>
-</html>
+</html>}*
+
+#{extends 'main.html' /}
+
+<div>
+    <p>Página de administrar contenido</p>
+    #{form @upload(), enctype: 'multipart/form-data'}
+        //TODO: cambiar estilo de imageTag
+        //TODO: cambiar imagen por default (actualmente /public/images/user-perfil.png, requiere actualizar también en imageTag)
+        #{imageTag imgSrcPath: '', fieldName: "imagen.imagenBase64", includeOriginal: true, originalFieldName: "imagen.wImagen.file"/}
+        *{#{imageTag imgSrcPath: '', fieldName: "imagen.imagenBase64", includeOriginal: true, originalFieldName: "original"/}}*
+        <input name="imagen.descripcion" placeholder="Descripción de la imagen"></input>
+        <br/>
+        <input type="submit">Subir imagen</input>
+    #{/form}
+</div>
