@@ -1,4 +1,11 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-#{welcome /}
+<html>
+    <head>
+        <title>Hello!</title>
+    </head>
+    <body>
+        <p><a href="@{Secure.login()}">Login</a></p>
+    </body>
+</html>

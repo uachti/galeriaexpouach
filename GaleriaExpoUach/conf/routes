@@ -2,8 +2,15 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
+# Página principal de galería
 GET     /                                       Application.index
+
+# Secure / Security
+GET     /login                                  Secure.login
+POST    /authenticate                           Secure.authenticate
+
+# Administracion
+GET     /admin                                  Administracion.admin
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
