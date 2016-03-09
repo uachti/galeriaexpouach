@@ -6,12 +6,18 @@
         <title>Hello!</title>
     </head>
     <body>
-        <!--<p><a href="@{Secure.login()}">Login</a></p>-->
+        <header role="banner">
+            <nav class="main-nav">
+                <ul>
+                    <a class="cd-signin" href="">Iniciar Sesión</a>
+                    <!--<a class="cd-signin" href="@{Secure.login()}">Iniciar Sesión</a>-->
+                </ul>
+            </nav>
+        </header>
         <nav class="cd-vertical-nav">
             <ul>
                 <li><a href="#section1" class="active"><span class="label">Inicio</span></a></li>
                 <li><a href="#section2"><span class="label">Galería</span></a></li>
-                <li><a href="#section3"><span class="label">Login</span></a></li>
             </ul>
         </nav><!-- .cd-vertical-nav -->
 
@@ -24,19 +30,48 @@
             </div>
         </section><!-- cd-section -->
 
+        <!------- SECCION DE GALERIA  -------->
         <section id="section2" class="cd-section">
             <div class="content-wrapper">
                 <h2>Events</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto numquam, totam iusto officia earum perferendis, culpa ad atque eveniet praesentium nobis expedita similique beatae tenetur. Distinctio vel tenetur, id cum.</p>
-                <a href="#section3" class="cd-scroll-down cd-image-replace">scroll</a>
             </div>
         </section><!-- cd-section -->
+        
+        <!------- MODAL INICIO DE SESION -------->
+        <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+            <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+                <a href="#0" class="cd-close-form">Cerrar</a>
+                <ul class="cd-switcher">
+                    <li><a href="#0">Iniciar Sesión</a></li>
+                </ul>
 
-        <section id="section3" class="cd-section">
-            <div class="content-wrapper">
-                <h2>Help</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto numquam, totam iusto officia earum perferendis, culpa ad atque eveniet praesentium nobis expedita similique beatae tenetur. Distinctio vel tenetur, id cum.</p>
-            </div>
-        </section><!-- cd-section -->
+                <div id="cd-login"> <!-- log in form -->
+                    <form id="login-form" class="cd-form" action="@controllers.Secure.authenticate()" enctype="multipart/form-data" method="POST" accept-charset="UFT-8">
+                        <p class="fieldset">
+                            <label class="image-replace cd-email" for="signin-email">Usuario</label>
+                            <input class="full-width has-padding has-border" id="signin-email" name="username" type="email" placeholder="Username">
+                            <span class="cd-error-message">Mensaje de Error!</span>
+                        </p>
+
+                        <p class="fieldset">
+                            <label class="image-replace cd-password" for="signin-password">Contraseña</label>
+                            <input class="full-width has-padding has-border" id="signin-password" name="password" type="password" placeholder="Contraseña">
+                            <a href="#0" class="hide-password">Hide</a>
+                            <span class="cd-error-message">Mensaje de Error!</span>
+                        </p>
+
+                        <p class="fieldset">
+                            <input type="checkbox" id="remember-me" checked>
+                            <label for="remember-me">Recordarme</label>
+                        </p>
+
+                        <p class="fieldset">
+                            <input class="full-width" type="submit" value="Acceder">
+                        </p>
+                    </form>
+                </div> <!-- cd-login -->
+            </div> <!-- cd-user-modal-container -->
+        </div> <!-- cd-user-modal -->
     </body>
 </html>

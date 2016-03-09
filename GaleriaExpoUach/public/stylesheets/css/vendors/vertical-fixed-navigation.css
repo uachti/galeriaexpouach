@@ -3,7 +3,7 @@
 Primary style
 
 -------------------------------- */
-/*
+
 *, *::after, *::before {
   box-sizing: border-box;
 }
@@ -24,7 +24,7 @@ body {
 a {
   color: #c0a672;
   text-decoration: none;
-}*/
+}
 
 .cd-image-replace {
   /* replace text with image */

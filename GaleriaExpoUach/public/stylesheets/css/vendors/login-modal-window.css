@@ -3,7 +3,7 @@
 Primary style
 
 -------------------------------- */
-html * {
+/*html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -37,7 +37,7 @@ input, textarea {
 }
 input::-ms-clear, textarea::-ms-clear {
   display: none;
-}
+}*/
 
 /* -------------------------------- 
 
@@ -46,7 +46,7 @@ Main components
 -------------------------------- */
 header[role=banner] {
   position: relative;
-  height: 50px;
+  height: 60px;
   background: #343642;
 }
 header[role=banner] #cd-logo {
@@ -75,7 +75,7 @@ header[role=banner]::after {
 }
 @media only screen and (min-width: 768px) {
   header[role=banner] {
-    height: 80px;
+    height: 50px;
   }
   header[role=banner] #cd-logo {
     margin: 20px 0 0 5%;
@@ -89,10 +89,11 @@ header[role=banner]::after {
 
 .main-nav {
   float: right;
-  margin-right: 5%;
+  margin-right: 1%;
+  margin-top: -15px;
   width: 44px;
   height: 100%;
-  background: url("../img/cd-icon-menu.svg") no-repeat center center;
+  background: url("../../../images/cd-icon-menu.svg") no-repeat center center;
   cursor: pointer;
 }
 .main-nav ul {
@@ -125,7 +126,7 @@ header[role=banner]::after {
 @media only screen and (min-width: 768px) {
   .main-nav {
     width: auto;
-    height: auto;
+    //height: auto;
     background: none;
     cursor: auto;
   }
@@ -160,7 +161,7 @@ header[role=banner]::after {
     background: transparent;
   }
   .main-nav a.cd-signin, .main-nav a.cd-signup {
-    padding: .6em 1em;
+    padding: .3em .5em;
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 50em;
   }
@@ -301,13 +302,13 @@ xsigin/signup popup
   background-position: 50% 0;
 }
 .cd-form label.cd-username {
-  background-image: url("../img/cd-icon-username.svg");
+  background-image: url("../../../images/cd-icon-username.svg");
 }
 .cd-form label.cd-email {
-  background-image: url("../img/cd-icon-email.svg");
+  background-image: url("../../../images/cd-icon-email.svg");
 }
 .cd-form label.cd-password {
-  background-image: url("../img/cd-icon-password.svg");
+  background-image: url("../../../images/cd-icon-password.svg");
 }
 .cd-form input {
   margin: 0;
@@ -469,11 +470,14 @@ xsigin/signup popup
   width: 40px;
   height: 40px;
   right: 0;
-  top: -40px;
-  background: url("../img/cd-icon-close.svg") no-repeat center center;
+  //top: -40px;
+  background: url("../../../images/cd-icon-close.svg") no-repeat center center;
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  margin: 10px;
 }
 @media only screen and (min-width: 1170px) {
   .cd-close-form {
