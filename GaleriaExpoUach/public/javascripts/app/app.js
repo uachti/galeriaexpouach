@@ -1,6 +1,6 @@
 'use strict';
 
-var gprApp = angular.module('galeriaApp', ['galeriaAppControllers']);
+var gprApp = angular.module('galeriaApp', ['galeriaAppControllers', 'galeriaAppDirectives']);
 
 String.prototype.camelize = function() {
     return this.toLowerCase().replace(/\s+(.)/g, function(match, group1) {
