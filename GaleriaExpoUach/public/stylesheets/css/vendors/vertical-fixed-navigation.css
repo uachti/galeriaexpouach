@@ -14,7 +14,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "Sintony", sans-serif;
+  font-family: "avenir_next", sans-serif;
   color: #eaf2e3;
   background-color: #3a2c41;
   -webkit-font-smoothing: antialiased;
@@ -203,7 +203,7 @@ Vertical navigation
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.2);
     -webkit-transform: translateX(100%);
     -moz-transform: translateX(100%);
     -ms-transform: translateX(100%);
@@ -404,7 +404,7 @@ Content Sections - basic style
   background: #3a2c41;
 }
 .cd-section:nth-of-type(even) {
-  background-color: #70557e;
+  background-color: rgba(0, 23, 31,.8);
 }
 .cd-section > div {
   /* vertically align <div> inside <section> */
@@ -508,4 +508,22 @@ no-js
 
 .content-wrapper h1 {
     color: #ffffff;
+}
+
+.heading-section {
+    font-size: 30px;
+    line-height: 48px;
+    position: relative;
+    border-width: 0 0 1px;
+    border-image: linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.15) 50%,rgba(255,255,255,0) 100%) 5%;
+    padding: 10px 30px;
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.header-top {
+    height: 50px;
+    background: transparent;
+    border-width: 0 0 1px;
+    border-image: linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.15) 50%,rgba(255,255,255,0) 100%) 5%;
 }

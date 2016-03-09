@@ -1,54 +1,9 @@
 /* -------------------------------- 
 
-Primary style
-
--------------------------------- */
-/*html * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-body {
-  font-size: 100%;
-  font-family: "PT Sans", sans-serif;
-  color: #505260;
-  background-color: white;
-}
-
-a {
-  color: #2f889a;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-}
-
-input, textarea {
-  font-family: "PT Sans", sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-input::-ms-clear, textarea::-ms-clear {
-  display: none;
-}*/
-
-/* -------------------------------- 
-
 Main components 
 
 -------------------------------- */
-header[role=banner] {
-  position: relative;
-  height: 60px;
-  background: #343642;
-}
+
 header[role=banner] #cd-logo {
   float: left;
   margin: 4px 0 0 5%;
@@ -64,15 +19,7 @@ header[role=banner] #cd-logo {
   -o-transform: scale(0.8);
   transform: scale(0.8);
 }
-header[role=banner] #cd-logo img {
-  display: block;
-}
-header[role=banner]::after {
-  /* clearfix */
-  content: '';
-  display: table;
-  clear: both;
-}
+
 @media only screen and (min-width: 768px) {
   header[role=banner] {
     height: 50px;
@@ -163,7 +110,7 @@ header[role=banner]::after {
   .main-nav a.cd-signin, .main-nav a.cd-signup {
     padding: .3em .5em;
     border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 50em;
+    border-radius: 2px;
   }
   .main-nav a.cd-signup {
     background: #2f889a;

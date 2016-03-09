@@ -6,22 +6,21 @@
         <title>Hello!</title>
     </head>
     <body>
-        <header role="banner">
+        <header class="header-top">
             <nav class="main-nav">
                 <ul>
                     <a class="cd-signin" href="">Iniciar Sesión</a>
-                    <!--<a class="cd-signin" href="@{Secure.login()}">Iniciar Sesión</a>-->
                 </ul>
             </nav>
         </header>
         <nav class="cd-vertical-nav">
             <ul>
                 <li><a href="#section1" class="active"><span class="label">Inicio</span></a></li>
-                <li><a href="#section2"><span class="label">Galería</span></a></li>
+                <li><a href="#section2" ><span class="label">Galería</span></a></li>
             </ul>
-        </nav><!-- .cd-vertical-nav -->
+        </nav>
 
-        <button class="cd-nav-trigger cd-image-replace">Abrir menú<span aria-hidden="true"></span></button>
+        <button class="cd-nav-trigger cd-image-replace">Menú<span aria-hidden="true"></span></button>
 
         <section id="section1" class="cd-section">
             <div class="content-wrapper">
@@ -30,11 +29,49 @@
             </div>
         </section><!-- cd-section -->
 
-        <!------- SECCION DE GALERIA  -------->
         <section id="section2" class="cd-section">
             <div class="content-wrapper">
-                <h2>Events</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto numquam, totam iusto officia earum perferendis, culpa ad atque eveniet praesentium nobis expedita similique beatae tenetur. Distinctio vel tenetur, id cum.</p>
+                <h3 class="heading-section">Galería</h3>
+                <div class="cd-slider-wrapper">
+                    <ul class="cd-slider">
+                        <li class="visible">
+                            <div class="cd-svg-wrapper">
+                                <div class="cd-svg-wrapper">
+                                    <img src="http://www.wallpapereast.com/static/images/HD-Wallpapers1_Q75eDHE.jpeg"/>
+                                    <h2>Titulo de Imagen Generico</h2>
+                                    <p>Descripcion de Imagen Generico</p>
+                                </div> <!-- .cd-svg-wrapper -->
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="cd-svg-wrapper">
+                                <div class="cd-svg-wrapper">
+                                    <img src="http://www.wallpapereast.com/static/images/Beautiful-Waterfall-Wallpaper-HD_Asw7E4B_qhFNEh3.jpg" />
+                                    <h2>Titulo de Imagen Generico</h2>
+                                    <p>Descripcion de Imagen Generico</p>
+                                </div> <!-- .cd-svg-wrapper -->
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="cd-svg-wrapper">
+                                <div class="cd-svg-wrapper">
+                                    <img src="http://www.wallpapereast.com/static/images/beach-cool-wallpaper-hd_1_6TrdHaw.jpg" />
+                                    <h2>Titulo de Imagen Generico</h2>
+                                    <p>Descripcion de Imagen Generico</p>
+                                </div> <!-- .cd-svg-wrapper -->
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <ul class="cd-slider-navigation">
+                        <li><a href="#0" class="next-slide">Siguiente</a></li>
+                        <li><a href="#0" class="prev-slide">Anterior</a></li>
+                    </ul> <!-- .cd-slider-navigation -->
+
+                    <ol class="cd-slider-controls">
+                        <li class="selected"><a href="#0"><em>Item 1</em></a></li>
+                    </ol> <!-- .cd-slider-controls -->
+                </div>
             </div>
         </section><!-- cd-section -->
         
