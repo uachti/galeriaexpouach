@@ -26,6 +26,13 @@
         
         <section id="section1" class="cd-section">
             <header class="header-top">
+                <div class="logo-uach">
+                    <object data="@{'/public/images/escudo_header_white.svg'}" type="image/svg+xml"
+                            width="190px" height="56px">
+                        <!-- Aqui se manda un message: cuando el navegador no soporta el svg -->
+                        <p>&{'navegador_no_soporta_svg'}</p>
+                    </object>
+                </div>
                 <nav class="main-nav">
                     <ul>
                         <a class="cd-signin" href="">Iniciar Sesión</a>
@@ -37,35 +44,8 @@
 	</section><!-- cd-section -->
 
         <section id="section2" class="cd-section" ng-controller="galeriaCtrl">
-            <div class="content-wrapper">
-                <h3 class="heading-section">Galería</h3>
-                <div class="cd-slider-wrapper">
-                    <ul class="cd-slider">
-                        #{list items: imagenes, as: 'imagen'}
-                        <li class="visible">
-                            <div class="cd-svg-wrapper">
-                                <div class="cd-svg-wrapper">    
-                                    <img ng-click="selectImage('${imagen?.idWImagen}')" #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else}  width="250" height="250" alt="${imagen?.descripcion}" >
-                                    <p><a href="@{imageFor(imagen?.idWImagen)}">${imagen?.descripcion}</a></p>
-                                </div> <!-- .cd-svg-wrapper -->
-                            </div>
-                        </li>
-                        #{/list}
-                        <image-big url="url"></imagen>
-                    </ul>
-
-                    <ul class="cd-slider-navigation">
-                        <li><a href="#0" class="next-slide">Siguiente</a></li>
-                        <li><a href="#0" class="prev-slide">Anterior</a></li>
-                    </ul> <!-- .cd-slider-navigation -->
-
-                    <ol class="cd-slider-controls">
-                        #{list items: imagenes, as: 'imagen'}
-                        <li class="selected"><a href="#${imagen_index - 1}"><em>Item ${imagen_index - 1}</em></a></li>                       
-                        #{/list}
-                    </ol> <!-- .cd-slider-controls -->
-                </div>
-            </div>
+            <h3 class="heading-section">Galería</h3>
+            
         </section><!-- cd-section -->
         
         <!------- MODAL INICIO DE SESION -------->
