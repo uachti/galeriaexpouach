@@ -59,33 +59,21 @@
                     if(index == 0) {
                         out.print('<div class="row margin-top">');
                     }
+                    if(index % 4 == 0) {
+                        out.print('</div>');
+                        out.print('<div class="row margin-top">');
+                    }
                 }%
                 <div class="col-md-3">
-                    <img class="materialboxed" data-caption="${imagen?.descripcion}" width="250" height="200" #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else} >
+                    <img class="materialboxed responsive-img" data-caption="${imagen?.descripcion}" width="250" height="200" #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else} >
                 </div>
                 %{
                     def isLast = imagenes.size() == imagen_index
-                    if(index != 0 && (index % 4 == 0 || isLast)) {
+                    if(isLast) {
                         out.print('</div>');
-                        if(!isLast) {
-                            out.print('<div class="row margin-top">');
-                        }
                     }
                 }%
-            #{/list}
-            
-             <!--#{list items: imagenes, as: 'imagen'}
-                    <li>
-                        <img ng-click="selectImage('${imagen?.idWImagen}')" #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else}  width="1024" height="760" alt="${imagen?.descripcion}" >
-                        <div class="caption center-align">
-                            <h2 class="light grey-text text-lighten-3"><a href="#modal">Titulo de la Imagen</a></h2>
-                            <h4 class="light grey-text text-lighten-3"><a href="@{imageFor(imagen?.idWImagen)}">${imagen?.descripcion}</a></h4>
-                        </div>
-                    </li>
-                    #{/list}-->
-                    <!--<image-big url="url"></imagen>-->
-            
-            
+            #{/list}            
         </section>
         
         <!------- MODAL INICIO DE SESION -------->

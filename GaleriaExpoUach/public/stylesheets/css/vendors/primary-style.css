@@ -23,6 +23,7 @@ body {
   background-color: #E7EBEE;//#3a2c41;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body, html {

@@ -2224,6 +2224,7 @@ legend {
   cursor: zoom-in;
   position: relative;
   transition: opacity .4s;
+  border-radius: 2px
 }
 
 .materialboxed:hover {
@@ -2254,14 +2255,29 @@ legend {
   position: fixed;
   display: none;
   color: #fff;
-  line-height: 50px;
   bottom: 0;
   width: 100%;
   text-align: center;
   padding: 0% 15%;
-  height: 50px;
   z-index: 1000;
   -webkit-font-smoothing: antialiased;
+  line-height: 20px;
+  height: 150px;
+  font-size: 18px;
+  overflow-x: hidden;
+  font-weight: 500;
+}
+
+.materialboxed:hover {
+    opacity: .8;
+    display: block;
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
+    position: relative;
+    transition: opacity .4s;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
 }
 
 .img-center {
