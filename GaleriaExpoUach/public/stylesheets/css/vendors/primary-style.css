@@ -37,3 +37,56 @@ a {
 img {
   max-width: 100%;
 }
+
+.form {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 2px;
+    border: 0;
+    background: #fff;
+    position: relative;
+    min-height: 20px;
+    margin-top: 50px;
+}
+
+.btn {
+    border: none !important;
+    text-transform: none !important;
+}
+
+.img-upload {
+    text-align: center;
+    vertical-align: middle;
+    height: 200px;
+    width: 250px;
+    margin: 0 auto;
+}
+
+.imagen-upload img {
+    border-radius: 2px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+}
+
+.is-fileinput {
+    margin-top: 0px !important;
+}
+
+.margin-top {
+    margin-top: 10px !important;
+}
+
+.legend {
+    padding: 10px 30px;
+    color: #3E3947;
+}
+
+.legend i {
+    color: #c0a672;
+    font-size: 25px;
+}
+
+.imagen-central {
+    text-align: center;
+    vertical-align: middle;
+    margin: 10% auto;
+}

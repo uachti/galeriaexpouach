@@ -304,7 +304,6 @@ Main components
     line-height: 48px;
     position: relative;
     border-width: 0 0 1px;
-    border-image: linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.15) 50%,rgba(255,255,255,0) 100%) 5%;
     padding: 10px 30px;
     display: inline-block;
     margin-bottom: 0px;
@@ -315,7 +314,24 @@ Main components
     height: 70px;
     background: #3E3947;
     border-width: 0 0 1px;
-    border-image: linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.15) 50%,rgba(255,255,255,0) 100%) 5%;
+    border-image: linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.3) 50%,rgba(255,255,255,0) 100%) 5%
+}
+
+.header-top-section2 {
+    margin-top: -30px;
+    height: 70px;
+    background: #D3C09C;
+    border-width: 0 0 1px;
+    border-image: linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,9) 50%,rgba(255,255,255,0) 100%) 5%
+}
+
+.header-top-section2 .heading-section  {
+    top: 10px;
+    font-size: 32px; 
+}
+
+.header-top-section2 .heading-section i {
+    color: #3E3947;
 }
 
 .header-top .logo-uach {
@@ -327,4 +343,9 @@ Main components
 section h1 b {
     color: #c0a672;
     font-weight: 400;
+}
+
+.title-section1 {
+    top: 5em !important;
+    font-size: 32px !important;
 }

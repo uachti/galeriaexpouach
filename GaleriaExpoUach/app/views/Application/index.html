@@ -40,13 +40,34 @@
                     </ul>
                 </nav>
             </header>
-            <h1>Expo <b>UACH</b> 2016</h1>
+            <h1 class="title-section1">Expo <b>UACH</b> 2016</h1>
+            <div class="imagen-central">
+                <img src="/public/images/expo-uach.jpg"/>
+            </div>   
 	    
             <a href="#section2" class="cd-scroll-down cd-img-replace"></a>
 	</section><!-- cd-section -->
 
         <section id="section2" class="cd-section" ng-controller="galeriaCtrl">
-            <h1 class="heading-section"><i class="fa fa-picture-o"></i> Galería</h1>
+            <header class="header-top-section2">
+                <h1 class="heading-section"><i class="fa fa-picture-o"></i> Galería</h1>
+            </header>
+            
+            <div class="slider">
+                <ul class="slides">
+                    #{list items: imagenes, as: 'imagen'}
+                    <li>
+                        <img ng-click="selectImage('${imagen?.idWImagen}')" #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else}  width="1024" height="760" alt="${imagen?.descripcion}" >
+                        <div class="caption center-align">
+                            <h4>Titulo de la Imagen</h4>
+                            <h5 class="light grey-text text-lighten-3"><a href="@{imageFor(imagen?.idWImagen)}">${imagen?.descripcion}</a></h5>
+                        </div>
+                    </li>
+                    #{/list}
+                    <!--<image-big url="url"></imagen>-->
+                </ul>
+            </div>
+            
             
         </section>
         

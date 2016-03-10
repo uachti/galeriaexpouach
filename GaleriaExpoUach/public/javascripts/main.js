@@ -168,6 +168,8 @@ $(document).ready(function($){
     $.material.init();
     $.material.ripples();
     $.material.input();
+    
+    $('.slider').slider({height: 600, transition: 600, interval: 8000});
 });
 
 //credits http://css-tricks.com/snippets/jquery/move-cursor-to-end-of-textarea-or-input/
