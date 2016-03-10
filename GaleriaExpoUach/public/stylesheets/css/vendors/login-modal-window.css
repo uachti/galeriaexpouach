@@ -448,12 +448,6 @@ xsigin/signup popup
   }
 }
 
-@media () {
-    .cd-user-modal-container .cd-switcher a.selected {
-        font-size: 
-    }
-}
-
 #cd-login, #cd-signup, #cd-reset-password {
   display: none;
 }
