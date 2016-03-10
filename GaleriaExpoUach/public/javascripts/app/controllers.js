@@ -21,7 +21,7 @@ app.controller('thumbnailCtrl', [function() {
                     image = new Image();
                     image.src = createObjectURL(images[i]);
                     image.onload = function(e) {
-                        var mybase64resized = resizeCrop(e.target, 250, 250).toDataURL('image/jpg', 90);
+                        var mybase64resized = resizeCrop(e.target, 250, 200).toDataURL('image/jpg', 90);
                         var thumb = document.getElementById('thumbnail');
                         var inputText = document.getElementById('input_image_base64');
                         thumb.src = mybase64resized;

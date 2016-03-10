@@ -15,41 +15,22 @@
 
 %{
     _alt = _alt ? _alt : ''
-    _defaultImgSrcPath = _defaultImgSrcPath ? _defaultImgSrcPath  : '/public/images/user-perfil.png'
+    _defaultImgSrcPath = _defaultImgSrcPath ? _defaultImgSrcPath  : '/public/images/non-img.png'
 }%
 
-*{<div class="row" ng-controller="thumbnailCtrl">
-    <div class="menu-content top animated fadeIn change-user-info">
-        <div class="col-md-12">
-            <div class="change-image profile">
-                <img id="thumbnail" class="img-responsive" #{if _imgSrcPath} src="${_imgSrcPath}" #{/if} #{else} src="${_defaultImgSrcPath}" #{/else}  alt="${_alt}">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        &{'image.tag.opciones'}
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#" id="upload_image">&{'image.tag.cambiar.imagen'}</a></li>
-                        //TODO: hacer clase nonedisplayimportant
-                        <input id="input_image" type="file" class="nonedisplayimportant" style="display: none"/>
-                        <input id="input_image_base64" name="${_fieldName}" type="text" class="nonedisplayimportant" style="display: none" #{if _imgSrcPath} value="${_imgSrcPath}" #{/if}/>
-                    </ul>
-                </div>
-            </div>
+<div ng-controller="thumbnailCtrl">
+    <div class="col-md-12">
+        <div class="img-upload">
+            <img id="thumbnail" class="img-responsive" width="250" height="200" #{if _imgSrcPath} src="${_imgSrcPath}" #{/if} #{else} src="${_defaultImgSrcPath}" #{/else}  alt="${_alt}">
         </div>
     </div>
-</div>}*
-<div class="row" ng-controller="thumbnailCtrl">
-    <div class="menu-content top animated fadeIn change-user-info">
-        <div class="col-md-12">
-            <div class="change-image profile">
-                <img id="thumbnail" class="img-responsive" #{if _imgSrcPath} src="${_imgSrcPath}" #{/if} #{else} src="${_defaultImgSrcPath}" #{/else}  alt="${_alt}">
-                <br/>
-                //TODO: hacer clase nonedisplayimportant?
-                <br/>
+      
+    <div class="form-group is-empty is-fileinput">
+        <label for="inputFile" class="col-md-2 control-label margin-top"> Imagen:</label>
+        <div class="col-md-8 margin-top">   
                 <input id="input_image" #{if _includeOriginal && _originalFieldName} name="${_originalFieldName}" #{/if} type="file"/>
-                <input id="input_image_base64" name="${_fieldName}" type="text" class="nonedisplayimportant" style="display: none" #{if _imgSrcPath} value="${_imgSrcPath}" #{/if}/>
-            </div>
+                <input id="input_image_base64" name="${_fieldName}" type="text" class="form-control" #{if _imgSrcPath} value="${_imgSrcPath}" #{/if}/>     
         </div>
+        <span class="material-input"></span
     </div>
 </div>

@@ -108,7 +108,7 @@ header[role=banner] #cd-logo {
     background: transparent;
   }
   .main-nav a.cd-signin, .main-nav a.cd-signup, .main-nav a.cd-upload {
-    padding: .3em .5em;
+    padding: .5em .6em;
     background: rgba(255, 255, 255, 0.2) !important;
     border-radius: 2px;
     text-decoration: none;
