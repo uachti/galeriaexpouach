@@ -79,7 +79,7 @@ $(document).ready(function($){
     
     //close modal when clicking the esc keyboard button
     $(document).keyup(function (event) {
-        if (event.which == '27') {
+        if (event.which === '27') {
             formModal.removeClass('is-visible');
         }
     });
@@ -95,8 +95,8 @@ $(document).ready(function($){
         var togglePass = $(this),
                 passwordField = togglePass.prev('input');
 
-        ('password' == passwordField.attr('type')) ? passwordField.attr('type', 'text') : passwordField.attr('type', 'password');
-        ('Mostrar' == togglePass.text()) ? togglePass.text('Ocultar') : togglePass.text('Mostrar');
+        ('password' === passwordField.attr('type')) ? passwordField.attr('type', 'text') : passwordField.attr('type', 'password');
+        ('Mostrar' === togglePass.text()) ? togglePass.text('Ocultar') : togglePass.text('Mostrar');
         //focus and move cursor to the end of input field
         passwordField.putCursorAtEnd();
     });
