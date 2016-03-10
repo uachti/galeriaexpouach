@@ -8,12 +8,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/css/vendors/reset.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/css/vendors/primary-style.css'}">
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/css/vendors/vertical-fixed-navigation.css'}">
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/css/vendors/login-modal-window.css'}">
-        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/css/vendors/primary-style.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/css/vendors/materialize.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/css/vendors/ripples.css'}">
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/css/vendors/font-awesome.min.css'}">
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/css/vendors/font-awesome-login.min.css'}">
-        <!--<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/css/vendors/bootstrap.min.css'}">-->
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/css/vendors/bootstrap.min.css'}">
         #{get 'moreStyles' /}
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
     </head>
@@ -47,8 +49,11 @@
         #{script '/app/controllers.js'/}
         #{script '/app/app.js'/}
         #{script '/lib/jquery-2.1.4.js'/}
+        #{script '/main.js'/}
+        #{script '/lib/material.js'/}
+        #{script '/lib/ripples.js'/}
+        #{script '/lib/bootstrap.min.js'/}
         #{script '/lib/jquery.mobile.custom.min.js'/}
         #{script '/lib/modernizr.js'/}
-        #{script '/main.js'/}
     </body>
 </html>

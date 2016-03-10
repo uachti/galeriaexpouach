@@ -1,25 +1,75 @@
-*{<!DOCTYPE html>
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-    </body>
-</html>}*
-
 #{extends 'main.html' /}
+#{set title:'Admin' /}
 
-<div>
-    <p>Página de administrar contenido</p>
-    #{form @upload(), enctype: 'multipart/form-data'}
-        //TODO: cambiar estilo de imageTag
-        //TODO: cambiar imagen por default (actualmente /public/images/user-perfil.png, requiere actualizar también en imageTag)
-        #{imageTag imgSrcPath: '', fieldName: "imagen.imagenBase64", includeOriginal: true, originalFieldName: "imagen.wImagen.file"/}
-        *{#{imageTag imgSrcPath: '', fieldName: "imagen.imagenBase64", includeOriginal: true, originalFieldName: "original"/}}*
-        <input name="imagen.descripcion" placeholder="Descripción de la imagen"></input>
-        <br/>
-        <input type="submit">Subir imagen</input>
-    #{/form}
-</div>
+<section id="section1" class="cd-section">
+    <header class="header-top">
+        <div class="logo-uach">
+            <object data="@{'/public/images/escudo_header_white.svg'}" type="image/svg+xml"
+                    width="190px" height="56px">
+                <!-- Aqui se manda un message: cuando el navegador no soporta el svg -->
+                <p>&{'navegador_no_soporta_svg'}</p>
+            </object>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <a class="cd-upload" href=""><i class="fa fa-sign-out"></i> Cerrar Sesión</a>
+                <a class="cd-upload" href="#"><i class="fa fa-file-image-o"></i> Regresar a Galeria</a>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Administrador de <b>Imagenes</b></h1>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <div class="form">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="imagen-upload">
+                            #{imageTag imgSrcPath: '', fieldName: "imagen.imagenBase64", includeOriginal: true, originalFieldName: "imagen.wImagen.file"/}
+                            *{#{imageTag imgSrcPath: '', fieldName: "imagen.imagenBase64", includeOriginal: true, originalFieldName: "original"/}}*
+                        </div>
+
+                        <div class="form-group title-img">
+                            <label class="col-md-2 control-label">Títlulo</label>
+                            <div class="col-md-8">
+                                <input class="form-control" name="imagen.titulo" placeholder="Título de la imagen"></input>
+                            </div>
+                        </div>
+
+                        <div class="form-group description-img">
+                            <label class="col-md-2 control-label">Descripción</label>
+                            <div class="col-md-8">
+                                <textarea class="form-control" name="imagen.descripcion" placeholder="Descripción de la imagen"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-2">
+                                <button type="submit" class="btn btn-raised btn-primary" name="save"><i class="fa fa-upload"></i> Subir imagen</button>
+                                <button type="button" class="btn btn-raised btn-default" name="cancel"><i class="fa fa-trash-o"></i> Cancelar</button>
+                            </div>
+                        </div>    
+                    </fieldset>             
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    
+    
+    <!--#{form @upload(), enctype: 'multipart/form-data'}
+    //TODO: cambiar estilo de imageTag
+    //TODO: cambiar imagen por default 
+    (actualmente /public/images/user-perfil.png, requiere actualizar también en imageTag)
+    
+    #{imageTag imgSrcPath: '', fieldName: "imagen.imagenBase64", includeOriginal: true, originalFieldName: "imagen.wImagen.file"/}
+    *{#{imageTag imgSrcPath: '', fieldName: "imagen.imagenBase64", includeOriginal: true, originalFieldName: "original"/}}*
+    
+    #{/form}-->

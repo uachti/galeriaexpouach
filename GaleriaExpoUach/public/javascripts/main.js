@@ -145,36 +145,29 @@ $(document).ready(function($){
     if (!Modernizr.input.placeholder) {
         $('[placeholder]').focus(function () {
             var input = $(this);
-            if (input.val() == input.attr('placeholder')) {
+            if (input.val() === input.attr('placeholder')) {
                 input.val('');
             }
         }).blur(function () {
             var input = $(this);
-            if (input.val() == '' || input.val() == input.attr('placeholder')) {
+            if (input.val() === '' || input.val() === input.attr('placeholder')) {
                 input.val(input.attr('placeholder'));
             }
         }).blur();
         $('[placeholder]').parents('form').submit(function () {
             $(this).find('[placeholder]').each(function () {
                 var input = $(this);
-                if (input.val() == input.attr('placeholder')) {
+                if (input.val() === input.attr('placeholder')) {
                     input.val('');
                 }
-            })
+            });
         });
     }
     /******************** END LOGIN MODAL WINDOW ********************/
     
-    
-    $('.cd-vertical-nav').mouseover(function(){ 
-        $('.main-nav').css('margin-right', '9%');
-        $('.cd-vertical-nav').mouseleave(function() {
-           $('.main-nav').css('margin-right', '1%'); 
-        });
-    });
-    
-    
-    
+    $.material.init();
+    $.material.ripples();
+    $.material.input();
 });
 
 //credits http://css-tricks.com/snippets/jquery/move-cursor-to-end-of-textarea-or-input/

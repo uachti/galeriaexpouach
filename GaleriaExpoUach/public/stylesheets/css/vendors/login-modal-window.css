@@ -107,22 +107,23 @@ header[role=banner] #cd-logo {
     line-height: normal;
     background: transparent;
   }
-  .main-nav a.cd-signin, .main-nav a.cd-signup {
+  .main-nav a.cd-signin, .main-nav a.cd-signup, .main-nav a.cd-upload {
     padding: .3em .5em;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2) !important;
     border-radius: 2px;
     text-decoration: none;
     margin-right: 10px;
     margin-top: 35px;
   }
-  .main-nav a.cd-signin:hover, .main-nav a.cd-signup:hover {
+  .main-nav a.cd-signin:hover, .main-nav a.cd-signup:hover, .main-nav a.cd-upload:hover {
       //padding: .4em .6em;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.2) !important;
       border-radius: 2px;
+      color: #fff !important;
       text-decoration: none;
-      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12) !important;
   }
-  .main-nav a.cd-signup {
+  .main-nav a.cd-signup, .main-nav a.cd-upload {
     background: #2f889a;
     border: none;
   }
@@ -237,7 +238,8 @@ xsigin/signup popup
 }
 .cd-form label {
   font-size: 14px;
-  font-size: 0.875rem;
+  color: rgba(62, 57, 71,.9);
+  font-weight: 400;
 }
 .cd-form label.image-replace {
   /* replace text with an icon */
@@ -441,11 +443,6 @@ xsigin/signup popup
   background-color: rgba(0,0,0,0.5);
   border-radius: 50%;
   margin: 10px;
-}
-@media only screen and (min-width: 1170px) {
-  .cd-close-form {
-    display: none;
-  }
 }
 
 #cd-login, #cd-signup, #cd-reset-password {
