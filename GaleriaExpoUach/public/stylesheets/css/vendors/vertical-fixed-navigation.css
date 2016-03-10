@@ -1,57 +1,17 @@
 /* -------------------------------- 
 
-Primary style
+Main components 
 
 -------------------------------- */
-html * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-body {
-  font-size: 100%;
-  font-family: "Ubuntu", sans-serif;
-  color: #3e3947;
-  background-color: white;
-}
-
-body, html {
-  height: 100%;
-}
-
-a {
-  color: #3e3947;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-}
-
-/* -------------------------------- 
-
-Modules - reusable parts of our design
-
--------------------------------- */
-.cd-img-replace {
-  /* replace text with a background-image */
+.cd-image-replace {
+  /* replace text with image */
   display: inline-block;
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
+  color: transparent;
 }
 
-/* -------------------------------- 
-
-Main components 
-
--------------------------------- */
 .cd-section {
   min-height: 100%;
   position: relative;
@@ -64,7 +24,7 @@ Main components
   color: #898099;
 }
 .cd-section:nth-of-type(even) {
-  background-color: #745360;
+  background-color: rgba(192, 166, 114,.7);//#745360;
 }
 .cd-section:nth-of-type(even) p {
   color: #bda3ad;
@@ -181,7 +141,7 @@ Main components
   height: 12px;
   width: 12px;
   border-radius: 50%;
-  background-color: #d88683;
+  background-color: #c0a672;//#d88683;
   -webkit-transition: -webkit-transform 0.2s, background-color 0.5s;
   -moz-transition: -moz-transform 0.2s, background-color 0.5s;
   transition: transform 0.2s, background-color 0.5s;
@@ -196,7 +156,7 @@ Main components
   margin-right: 10px;
   padding: .4em .5em;
   color: white;
-  font-size: 14px;
+  font-size: 14px !important;
   font-size: 0.875rem;
   -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
   -moz-transition: -moz-transform 0.2s, opacity 0.2s;
@@ -352,10 +312,16 @@ Main components
 
 .header-top {
     margin-top: -30px;
-    height: 50px;
+    height: 70px;
     background: #3E3947;
     border-width: 0 0 1px;
     border-image: linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.15) 50%,rgba(255,255,255,0) 100%) 5%;
+}
+
+.header-top .logo-uach {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 section h1 b {

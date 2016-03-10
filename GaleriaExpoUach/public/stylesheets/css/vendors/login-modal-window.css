@@ -112,6 +112,8 @@ header[role=banner] #cd-logo {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 2px;
     text-decoration: none;
+    margin-right: 10px;
+    margin-top: 35px;
   }
   .main-nav a.cd-signin:hover, .main-nav a.cd-signup:hover {
       //padding: .4em .6em;
@@ -185,7 +187,7 @@ xsigin/signup popup
   clear: both;
 }
 .cd-user-modal-container .cd-switcher li {
-  width: 50%;
+  width: 100%;
   float: left;
   text-align: center;
 }
@@ -193,7 +195,7 @@ xsigin/signup popup
   border-radius: .25em 0 0 0;
 }
 .cd-user-modal-container .cd-switcher li:last-child a {
-  border-radius: 0 .25em 0 0;
+  border-radius: .25em .25em 0 0;
 }
 .cd-user-modal-container .cd-switcher a {
   display: block;
@@ -444,6 +446,12 @@ xsigin/signup popup
   .cd-close-form {
     display: none;
   }
+}
+
+@media () {
+    .cd-user-modal-container .cd-switcher a.selected {
+        font-size: 
+    }
 }
 
 #cd-login, #cd-signup, #cd-reset-password {
