@@ -1114,10 +1114,6 @@ if ($) {
         });
 };
 
-$(document).ready(function(){
-  $('.materialboxed').materialbox();
-});
-
 }( jQuery ));
 ;(function ($) {
 
