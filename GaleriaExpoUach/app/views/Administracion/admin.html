@@ -21,33 +21,32 @@
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
             <div class="form">
-                <form class="form-horizontal">
+                <form id="admin-form" class="form-horizontal*{ cd-form}*" action="@{upload()}" enctype="multipart/form-data" method="POST" accept-charset="UFT-8">
                     <fieldset>
                         <legend class="legend"><i class="fa fa-picture-o"></i> Administrador de Imagenes</legend>
-                        
-                        #{imageTag imgSrcPath: '', fieldName: "imagen.imagenBase64", includeOriginal: true, originalFieldName: "imagen.wImagen.file"/}
-                        *{#{imageTag imgSrcPath: '', fieldName: "imagen.imagenBase64", includeOriginal: true, originalFieldName: "original"/}}*
-                        
-                        <div class="form-group title-img">
-                            <label class="col-md-2 control-label">Títlulo:</label>
-                            <div class="col-md-8">
-                                <input class="form-control" name="imagen.titulo" placeholder="Título de la imagen"></input>
-                            </div>
-                        </div>
+                            #{imageTag imgSrcPath: '', fieldName: "imagen.imagenBase64", includeOriginal: true, originalFieldName: "imagen.wImagen.file"/}
+                            *{#{imageTag imgSrcPath: '', fieldName: "imagen.imagenBase64", includeOriginal: true, originalFieldName: "original"/}}*
 
-                        <div class="form-group description-img">
-                            <label class="col-md-2 control-label">Descripción:</label>
-                            <div class="col-md-8">
-                                <textarea class="form-control" name="imagen.descripcion" placeholder="Descripción de la imagen"></textarea>
+                            <div class="form-group title-img">
+                                <label class="col-md-2 control-label">Títlulo:</label>
+                                <div class="col-md-8">
+                                    <input class="form-control" name="imagen.titulo" placeholder="Título de la imagen"></input>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <div class="col-md-10 col-md-offset-2">
-                                <button type="submit" class="btn btn-raised btn-primary" name="save"><i class="fa fa-upload"></i> Subir imagen</button>
-                                <button type="button" class="btn btn-raised btn-default" name="cancel"><i class="fa fa-trash-o"></i> Cancelar</button>
+                            <div class="form-group description-img">
+                                <label class="col-md-2 control-label">Descripción:</label>
+                                <div class="col-md-8">
+                                    <textarea class="form-control" name="imagen.descripcion" placeholder="Descripción de la imagen"></textarea>
+                                </div>
                             </div>
-                        </div>    
+
+                            <div class="form-group">
+                                <div class="col-md-10 col-md-offset-2">
+                                    <button type="submit" class="btn btn-raised btn-primary" name="save"><i class="fa fa-upload"></i> Subir imagen</button>
+                                    <button type="button" class="btn btn-raised btn-default" name="cancel"><i class="fa fa-trash-o"></i> Cancelar</button>
+                                </div>
+                            </div>    
                     </fieldset>             
                 </form>
             </div>
