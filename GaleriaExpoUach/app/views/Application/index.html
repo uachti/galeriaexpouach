@@ -1,11 +1,11 @@
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:'EXPO UACH 2016' /}
 
 <html>
     <head>
-        <title>Hello!</title>
+        <title>EXPO UACH 2016</title>
     </head>
-    <body>
+    <body ng-controller="galeriaCtrl">
         <nav id="cd-vertical-nav">
             <ul>
                 <li>
@@ -35,8 +35,13 @@
                 </div>
                 <nav class="main-nav">
                     <ul>
-                        <a class="cd-signin" href=""><i class="fa fa-sign-in"></i> Iniciar Sesión</a>
-                        <a class="cd-upload" href="#"><i class="fa fa-file-image-o"></i> Subir Imagen</a>
+                        %{loggedIn = false}%
+                        #{secure.check ''}
+                        %{loggedIn = true}%
+                        <a class="cd-upload" href="@{Secure.logout()}"><i class="fa fa-sign-out"></i> Cerrar Sesión</a>
+                        <a class="cd-upload" href="@{Administracion.admin()}"><i class="fa fa-file-image-o"></i> Subir Imagen</a>
+                        #{/secure.check}
+                        #{if !loggedIn}<a class="cd-signin" href=""><i class="fa fa-sign-in"></i> Iniciar Sesión</a>#{/if}
                     </ul>
                 </nav>
             </header>
@@ -58,7 +63,7 @@
             <a href="#section2" class="cd-scroll-down cd-img-replace"></a>
 	</section><!-- cd-section -->
 
-        <section id="section2" class="cd-section" ng-controller="galeriaCtrl">
+        <section id="section2" class="cd-section">
             <header class="header-top-section2">
                 <h1 class="heading-section"><i class="fa fa-picture-o"></i> Galería</h1>
             </header>
@@ -66,6 +71,7 @@
             #{list items: imagenes, as: 'imagen'}
                 %{
                     def index = imagen_index - 1
+                    def isLast = imagenes.size() == imagen_index
                     if(index == 0) {
                         out.print('<div class="row margin-top">');
                     }
@@ -76,12 +82,11 @@
                 }%
                 <div class="col-md-3">
                     <a data-type="modal-trigger" href="#0">
-                        <img class="materialboxed-img responsive-img" width="300" height="250" #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else} >
+                        <img ng-click="selectImage('${imagen?.idWImagen}', '${imagen?.descripcion != null && imagen?.descripcion?.length() > 0 ? imagen?.descripcion : 'Sin descripción'}')" class="materialboxed-img responsive-img" width="250" height="200" #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else} >
                     </a>
                     <span class="cd-modal-bg"></span>
                 </div>
                 %{
-                    def isLast = imagenes.size() == imagen_index
                     if(isLast) {
                         out.print('</div>');
                     }
@@ -92,10 +97,10 @@
             <div class="cd-modal">
                 <div class="cd-modal-content">
                     <div class="modal-img">
-                        <img src=""/>
+                        <image-big url="url"></imagen>
                     </div>
                     
-                    <p>Descripcion de la imagen</p>
+                    <p>{{descripcion}}</p>
                 </div> <!-- cd-modal-content -->
             </div> <!-- cd-modal -->
 
@@ -135,7 +140,7 @@
                         </p>
 
                         <p class="fieldset">
-                            <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked">
+                            <input type="checkbox" name="remember" class="filled-in" id="filled-in-box" checked="checked">
                             <label for="filled-in-box">Recordarme</label>
                         </p>
                         

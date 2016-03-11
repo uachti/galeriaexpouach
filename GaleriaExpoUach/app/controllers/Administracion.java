@@ -1,12 +1,8 @@
 package controllers;
 
-import java.util.Map;
-import java.util.Objects;
 import models.Imagen;
 import play.mvc.Controller;
 import play.mvc.With;
-//TODO: 
-//import javax.imageio.
 
 /**
  * Controlador para el área de administración de la galería.
@@ -26,18 +22,18 @@ public class Administracion extends Controller {
     }
 
     /**
-     * Acción que sube una {@code Imagen}.
+     * Acción que sube una {@code Imagen} para la galería.
      *
      * @param imagen {@code Imagen} a subir
      */
     public static void upload(Imagen imagen) {
-        
+
         Boolean isFileValid = Boolean.FALSE;
         try {
             isFileValid = imagen.wImagen.file.exists();
         } catch (Exception e) {
         }
-        
+
         Boolean success = imagen.wImagen.validateAndSave() && imagen.validateAndSave();
         if (success) {
             flash.success("Se ha subido la imagen exitosamente.");
@@ -48,6 +44,19 @@ public class Administracion extends Controller {
             flash.error("No fue posible subir la imagen.");
         }
         admin();
+    }
+
+    /**
+     * Acción para borrar una {@code Imagen}.
+     *
+     * @param idImagen {@code String} con el <i>_id</i> de la {@code Imagen} a
+     * borrar
+     */
+    public static void delete(String idImagen) {
+        Imagen imagen = Imagen.findById(idImagen);
+        notFoundIfNull(imagen);
+
+        imagen.delete();
     }
 
 }
