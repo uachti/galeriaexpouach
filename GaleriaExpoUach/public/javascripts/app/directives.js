@@ -8,7 +8,7 @@ app.directive('imageBig', [function() {
             scope: {
                 url: '=url'
             },
-            template: '<img ng-src="{{url}}"> TEST'
+            template: '<img ng-src="{{url}}">'
         };
     }]);
 

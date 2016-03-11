@@ -61,14 +61,15 @@ app.controller('thumbnailCtrl', [function() {
 app.factory('galeriaService', ['$rootScope', function($rootScope) {
         var service = {};
         service.url = {};
+        service.descripcion = 'Sin descripción';
 
-        service.select = function(id) {
+        service.select = function(id, descripcion) {
             service.url = '/image/' + id;
+            service.descripcion = descripcion;
             broadcastImageSelected();
         };
 
         var broadcastImageSelected = function() {
-            console.log('broadcast');
             $rootScope.$broadcast('imageSelected');
         };
         
@@ -76,15 +77,12 @@ app.factory('galeriaService', ['$rootScope', function($rootScope) {
     }]);
 
 app.controller('galeriaCtrl', ['$scope', 'galeriaService', function($scope, galeriaService) {
-        $scope.selectImage = function(id) {
-            console.log('click!');
-            galeriaService.select(id);
+        $scope.selectImage = function(id, descripcion) {
+            galeriaService.select(id, descripcion);
         };
         
         $scope.$on('imageSelected', function() {
             $scope.url = galeriaService.url;
-            console.log('$on');
-            console.log('$scope.url');
-            console.log($scope.url);
+            $scope.descripcion = galeriaService.descripcion;
         });
     }]);

@@ -1,11 +1,11 @@
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:'EXPO UACH 2016' /}
 
 <html>
     <head>
-        <title>Hello!</title>
+        <title>EXPO UACH 2016</title>
     </head>
-    <body>
+    <body ng-controller="galeriaCtrl">
         <nav id="cd-vertical-nav">
             <ul>
                 <li>
@@ -63,7 +63,7 @@
             <a href="#section2" class="cd-scroll-down cd-img-replace"></a>
 	</section><!-- cd-section -->
 
-        <section id="section2" class="cd-section" ng-controller="galeriaCtrl">
+        <section id="section2" class="cd-section">
             <header class="header-top-section2">
                 <h1 class="heading-section"><i class="fa fa-picture-o"></i> Galería</h1>
             </header>
@@ -82,7 +82,7 @@
                 }%
                 <div class="col-md-3">
                     <a data-type="modal-trigger" href="#0">
-                        <img class="materialboxed-img responsive-img" width="250" height="200" #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else} >
+                        <img ng-click="selectImage('${imagen?.idWImagen}', '${imagen?.descripcion != null && imagen?.descripcion?.length() > 0 ? imagen?.descripcion : 'Sin descripción'}')" class="materialboxed-img responsive-img" width="250" height="200" #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else} >
                     </a>
                     <span class="cd-modal-bg"></span>
                 </div>
@@ -97,10 +97,10 @@
             <div class="cd-modal">
                 <div class="cd-modal-content">
                     <div class="modal-img">
-                        <img src=""/>
+                        <image-big url="url"></imagen>
                     </div>
                     
-                    <p>Descripcion de la imagen</p>
+                    <p>{{descripcion}}</p>
                 </div> <!-- cd-modal-content -->
             </div> <!-- cd-modal -->
 
