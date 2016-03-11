@@ -89,5 +89,24 @@ img {
 .imagen-central {
     text-align: center;
     vertical-align: middle;
-    margin: 10% auto;
+}
+
+.imagen-central img {
+    border-radius: 50%;
+    margin-top: 50%;
+}
+
+footer {
+    background: #C0A672;
+    color: #eee;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 30px;
+}
+
+footer .container p a {
+    color: #352740;
+    text-decoration: none;
 }

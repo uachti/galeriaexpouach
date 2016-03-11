@@ -21,18 +21,18 @@
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
             <div class="form">
-                <form id="admin-form" class="form-horizontal*{ cd-form}*" action="@{upload()}" enctype="multipart/form-data" method="POST" accept-charset="UFT-8">
+                <form id="admin-form" class="form-horizontal" action="@{upload()}" enctype="multipart/form-data" method="POST" accept-charset="UFT-8">
                     <fieldset>
                         <legend class="legend"><i class="fa fa-picture-o"></i> Administrador de Imagenes</legend>
                             #{imageTag imgSrcPath: '', fieldName: "imagen.imagenBase64", includeOriginal: true, originalFieldName: "imagen.wImagen.file"/}
                             *{#{imageTag imgSrcPath: '', fieldName: "imagen.imagenBase64", includeOriginal: true, originalFieldName: "original"/}}*
 
-                            <div class="form-group title-img">
+                            <!--<div class="form-group title-img">
                                 <label class="col-md-2 control-label">Títlulo:</label>
                                 <div class="col-md-8">
                                     <input class="form-control" name="imagen.titulo" placeholder="Título de la imagen"></input>
                                 </div>
-                            </div>
+                            </div>-->
 
                             <div class="form-group description-img">
                                 <label class="col-md-2 control-label">Descripción:</label>

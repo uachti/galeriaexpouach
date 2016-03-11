@@ -40,10 +40,20 @@
                     </ul>
                 </nav>
             </header>
-            <!--<h1 class="title-section1">Expo <b>UACH</b> 2016</h1>-->
-            <div class="imagen-central">
-                <img src="/public/images/expo-uach.jpg"/>
-            </div>   
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <h1 class="title-section1">Expo <b>UACH</b> <i class="fa fa-play"></i> 2016</h1>
+                </div>
+                <div class="col-md-4">
+                    <div class="imagen-central">
+                        <img src="/public/images/expo-uach.jpg" width="200" height="200" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h1 class="title-section-alt"> Orgullo de ser <b>UACH</b></h1>
+                </div>
+            </div>
 	    
             <a href="#section2" class="cd-scroll-down cd-img-replace"></a>
 	</section><!-- cd-section -->
@@ -52,7 +62,7 @@
             <header class="header-top-section2">
                 <h1 class="heading-section"><i class="fa fa-picture-o"></i> Galería</h1>
             </header>
-            
+            <div class="margin cd-modal-action">
             #{list items: imagenes, as: 'imagen'}
                 %{
                     def index = imagen_index - 1
@@ -65,7 +75,10 @@
                     }
                 }%
                 <div class="col-md-3">
-                    <img class="materialboxed responsive-img" data-caption="${imagen?.descripcion}" width="250" height="200" #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else} >
+                    <a data-type="modal-trigger" href="#0">
+                        <img class="materialboxed-img responsive-img" width="250" height="200" #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else} >
+                    </a>
+                    <span class="cd-modal-bg"></span>
                 </div>
                 %{
                     def isLast = imagenes.size() == imagen_index
@@ -73,9 +86,31 @@
                         out.print('</div>');
                     }
                 }%
-            #{/list}            
+            #{/list}
+            </div>
+            
+            <div class="cd-modal">
+                <div class="cd-modal-content">
+                    <div class="modal-img">
+                        <img src=""/>
+                    </div>
+                    
+                    <p>Descripcion de la imagen</p>
+                </div> <!-- cd-modal-content -->
+            </div> <!-- cd-modal -->
+
+            <a href="#0" class="cd-modal-close">Close</a>
+            
         </section>
-        
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>2016. Todos los derechos reservados. Powered by <a href="http://uach.mx" target="_blank">Universidad Autónoma de Chihuahua.</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
         <!------- MODAL INICIO DE SESION -------->
         <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
             <div class="cd-user-modal-container"> <!-- this is the container wrapper -->

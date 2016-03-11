@@ -17,14 +17,24 @@ Main components
   position: relative;
   padding: 2em 0;
 }
+
+.margin {
+    padding: 0 2em;
+}
+
 .cd-section:nth-of-type(odd) {
   background-color: #3e3947;
+  background-image: url(../../../images/header_bg.png);
+  background-repeat: no-repeat;
+  background-position: bottom center !important;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .cd-section:nth-of-type(odd) p {
   color: #898099;
 }
 .cd-section:nth-of-type(even) {
-  background-color: rgba(192, 166, 114,.7);//#745360;
+  background-color: rgba(192, 166, 114,.9);//#745360;
 }
 .cd-section:nth-of-type(even) p {
   color: #bda3ad;
@@ -312,15 +322,15 @@ Main components
 .header-top {
     margin-top: -30px;
     height: 70px;
-    background: #3E3947;
+    background: rgba(62, 57, 71,.6);//#3E3947;
     border-width: 0 0 1px;
     border-image: linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.3) 50%,rgba(255,255,255,0) 100%) 5%
 }
 
 .header-top-section2 {
-    margin-top: -30px;
+    margin-top: -28px;
     height: 70px;
-    background: #D3C09C;
+    background: rgba(192, 166, 114,.9);//#D3C09C;
     border-width: 0 0 1px;
     border-image: linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,9) 50%,rgba(255,255,255,0) 100%) 5%
 }
@@ -346,6 +356,16 @@ section h1 b {
 }
 
 .title-section1 {
-    top: 5em !important;
-    font-size: 32px !important;
+    top: 3em !important;
+    font-size: 52px !important;
+    padding-left: 10px;
+}
+
+.title-section1 i {
+    color: #c0a672;
+}
+
+.title-section-alt {
+    font-size: 20px !important;
+    margin-top: 125% !important;
 }
