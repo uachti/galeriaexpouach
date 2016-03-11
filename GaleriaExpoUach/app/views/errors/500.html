@@ -1,20 +1,31 @@
 <!DOCTYPE html>
-
 <html>
     <head>
-        <title>Application error</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=${_response_encoding}"/>
+        <title>#{get 'title' /}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+        
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/css/vendors/errors.css'}">
     </head>
     <body>
         #{if play.mode.name() == 'DEV'}
-            #{500 exception /}
+        <div class="error-500">
+            <h1> 500 </h1>
+            <p>Ha ocurrido un error inesperado, hemos experimentado una falla del lado del servidor.</p>
+        </div>
+        
         #{/if}
-        #{else}
-            <h1>Oops, an error occured</h1>
+        #{else
+        <div class="error-500">
+            <h1> 500 </h1>
+            <p>Ha ocurrido un error inesperado, hemos experimentado una falla del lado del servidor.</p>
+        </div>
             #{if exception instanceof play.exceptions.PlayException}
-                <p>
-                    This exception has been logged with id <strong>${exception.id}</strong>.
-                </p>
+            <div class="error-500">
+                <h1> 500 </h1>
+                <p>Esta excepción se ha registrado con este id <strong>${exception.id}</strong>.</p>
+            </div>
             #{/if}
         #{/else}
     </body>

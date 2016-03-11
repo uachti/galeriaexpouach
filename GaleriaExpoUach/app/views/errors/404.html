@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-
 <html>
     <head>
-        <title>Not found</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=${_response_encoding}"/>    
+        <title>#{get 'title' /}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+        
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/css/vendors/errors.css'}">
     </head>
     <body>
         #{if play.mode.name() == 'DEV'}
-            #{404 result /}
+        <div class="error-404">
+            <h1> 404 </h1>
+            <p>Lo sentimos, la página solicitada no se ha encontrado o no existe.</p>
+        </div>
+        
         #{/if}
         #{else}
-            <h1>Not found</h1>
-            <p>
-                ${result.message}
-            </p>
+        <div class="error-404">
+            <h1> 404 </h1>
+            <p>Lo sentimos, la página solicitada no se ha encontrado o no existe.</p>
+        </div>
         #{/else}
     </body>
 </html>
