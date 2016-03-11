@@ -85,9 +85,12 @@
                         <img ng-click="selectImage('${imagen?.idWImagen}', '${imagen?.descripcion != null && imagen?.descripcion?.length() > 0 ? imagen?.descripcion : 'Sin descripción'}')" class="materialboxed-img responsive-img" width="250" height="200" #{if imagen?.imagenBase64} src="${imagen?.imagenBase64}" #{/if}#{else} src="/public/images/user-perfil.png"#{/else} >
                     </a>
                     <span class="cd-modal-bg"></span>
+                    #{secure.check ''}
                     <div class="delete-img">
-                        <button><i class="fa fa-times"></i> Eliminar Imagen</button>
+                        #{form @Administracion.delete(imagen?.id), method: 'DELETE', id: 'delete_' + imagen?.id}#{/form }
+                        <button onclick="document.getElementById('delete_${imagen?.id}').submit(); return false;" ng-disabled="eliminando" ng-click="eliminando=true" ><i class="fa fa-times"></i> Eliminar Imagen</button>
                     </div>
+                    #{/secure.check}
                 </div>
                 %{
                     if(isLast) {

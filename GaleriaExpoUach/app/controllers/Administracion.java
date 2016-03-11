@@ -57,6 +57,7 @@ public class Administracion extends Controller {
         notFoundIfNull(imagen);
 
         imagen.delete();
+        Application.index();
     }
 
 }
