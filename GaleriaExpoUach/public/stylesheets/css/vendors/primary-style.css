@@ -18,7 +18,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "avenir_next", sans-serif;
+  font-family: "avenir_next" !important;//, sans-serif;
   color: #eaf2e3;
   background-color: #E7EBEE;//#3a2c41;
   -webkit-font-smoothing: antialiased;
@@ -30,9 +30,19 @@ body, html {
     height: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'avenir_next' !important;
+}
+
 a {
   color: #c0a672;
   text-decoration: none;
+  font-family: 'avenir_next' !important;
 }
 
 img {
@@ -92,7 +102,7 @@ img {
 }
 
 .imagen-central img {
-    border-radius: 50%;
+   border-radius: 50%;
     margin-top: 50%;
 }
 
