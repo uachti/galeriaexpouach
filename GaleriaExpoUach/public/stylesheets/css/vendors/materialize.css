@@ -2657,3 +2657,31 @@ form p:last-child {
     top: 70px;
   }
 }
+
+.delete-img {
+    width: 250px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.delete-img button {
+    border: none;
+    background: rgba(192, 57, 43,.5);
+    width: 100%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    color: #fff;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.delete-img button:hover {
+    background: rgba(192, 57, 43,.8);
+    font-weight: 600;
+}
+
+.hidden-delete {
+    display: none;
+}

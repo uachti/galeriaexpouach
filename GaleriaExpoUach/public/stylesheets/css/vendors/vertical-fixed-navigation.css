@@ -367,5 +367,12 @@ section h1 b {
 
 .title-section-alt {
     font-size: 30px !important;
-    margin-top: 125% !important;
+    margin-top: 115% !important;
+}
+
+
+@media (max-width: 1090px) {
+    .materialboxed-img {
+        margin-bottom: 10px !important;
+    }
 }
