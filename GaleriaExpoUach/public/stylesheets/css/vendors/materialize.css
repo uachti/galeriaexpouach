@@ -2229,7 +2229,8 @@ legend {
   cursor: pointer;//zoom-in;
   position: relative;
   transition: opacity .4s;
-  border-radius: 2px
+  border-radius: 2px;
+  margin: 0 auto;
 }
 
 .materialboxed-img:hover {
@@ -2510,7 +2511,7 @@ form p:last-child {
   //background: linear-gradient(to top, #34383c, rgba(52, 56, 60, 0));
 }
 .cd-modal .cd-modal-content {
-  height: 100%;
+  height: auto;//100%;
   width: 100%;
   padding: 3em 5%;
   text-align: left;
@@ -2519,18 +2520,42 @@ form p:last-child {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.modal-img {
+    position: relative;
+    display: block;
+    //width: 1026px;
+    //height: 545px;
+}
+
+.modal-img img,
+.modal-img image-big img {
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+}
+
 .cd-modal-content p {
     font-size: 16px;
-    color: #463353;
+    color: #463353 !important;
     line-height: 20px;
     position: relative;
 }
 
-.cd-modal p {
-  color: #ffffff;
-  line-height: 1.6;
-  margin: 2em 0;
+.cd-modal-content p {
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    width: auto !important;
+    max-width: : auto !important;
+    text-align: center !important;
 }
+
+.description-img {
+    
+}
+
 .modal-is-visible .cd-modal {
   z-index: 1;
   visibility: visible;
@@ -2544,18 +2569,18 @@ form p:last-child {
   -webkit-overflow-scrolling: touch;
 }
 @media only screen and (min-width: 768px) {
-  .cd-modal .cd-modal-content {
+  /*.cd-modal .cd-modal-content {
     padding: 4em 10%;
-  }
+  }*/
 }
 @media only screen and (min-width: 1170px) {
-  .cd-modal .cd-modal-content {
+  /*.cd-modal .cd-modal-content {
     padding: 6em 20%;
   }
   .cd-modal p {
     font-size: 2rem;
     line-height: 2;
-  }
+  }*/
 }
 
 .cd-modal-action {
@@ -2644,7 +2669,7 @@ form p:last-child {
   transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
 }
 .no-touch .cd-modal-close:hover {
-  background-color: #fff;//rgba(0, 0, 0, 0.5);
+  background-color: rgba(192, 57, 43,.8);//rgba(0, 0, 0, 0.5);
 }
 .modal-is-visible .cd-modal-close {
   visibility: visible;
@@ -2659,7 +2684,7 @@ form p:last-child {
   transform: scale(1);
 }
 @media only screen and (min-width: 768px) {
-  .cd-modal-close {
+  /*.cd-modal-close {
     top: 70px;
-  }
+  }*/
 }

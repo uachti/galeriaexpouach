@@ -37,7 +37,7 @@ Main components
   background-color: rgba(192, 166, 114,.9);//#745360;
 }
 .cd-section:nth-of-type(even) p {
-  color: #bda3ad;
+  //color: #bda3ad;
 }
 .cd-section h1, .cd-section p {
   position: absolute;
