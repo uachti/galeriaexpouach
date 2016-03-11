@@ -35,8 +35,13 @@
                 </div>
                 <nav class="main-nav">
                     <ul>
-                        <a class="cd-signin" href=""><i class="fa fa-sign-in"></i> Iniciar Sesión</a>
-                        <a class="cd-upload" href="#"><i class="fa fa-file-image-o"></i> Subir Imagen</a>
+                        %{loggedIn = false}%
+                        #{secure.check ''}
+                        %{loggedIn = true}%
+                        <a class="cd-upload" href="@{Secure.logout()}"><i class="fa fa-sign-out"></i> Cerrar Sesión</a>
+                        <a class="cd-upload" href="@{Administracion.admin()}"><i class="fa fa-file-image-o"></i> Subir Imagen</a>
+                        #{/secure.check}
+                        #{if !loggedIn}<a class="cd-signin" href=""><i class="fa fa-sign-in"></i> Iniciar Sesión</a>#{/if}
                     </ul>
                 </nav>
             </header>
@@ -66,6 +71,7 @@
             #{list items: imagenes, as: 'imagen'}
                 %{
                     def index = imagen_index - 1
+                    def isLast = imagenes.size() == imagen_index
                     if(index == 0) {
                         out.print('<div class="row margin-top">');
                     }
@@ -81,7 +87,6 @@
                     <span class="cd-modal-bg"></span>
                 </div>
                 %{
-                    def isLast = imagenes.size() == imagen_index
                     if(isLast) {
                         out.print('</div>');
                     }
@@ -135,7 +140,7 @@
                         </p>
 
                         <p class="fieldset">
-                            <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked">
+                            <input type="checkbox" name="remember" class="filled-in" id="filled-in-box" checked="checked">
                             <label for="filled-in-box">Recordarme</label>
                         </p>
                         

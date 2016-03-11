@@ -16,10 +16,10 @@ import play.modules.morphia.Model;
  */
 @Entity
 public class Imagen extends Model {
-    
+
     @Transient
     public WBlob wImagen;
-    
+
     public ObjectId idWImagen;
 
     @Required
@@ -32,7 +32,7 @@ public class Imagen extends Model {
      */
     public Imagen() {
     }
-    
+
     @PrePersist
     private void setWBlobId() {
         ObjectId tempId;
@@ -41,6 +41,26 @@ public class Imagen extends Model {
         }
     }
 
+    /**
+     * Interceptor. Antes de borrar una {@code Imagen}, se borra también el
+     * {@code WBlob} relacionado
+     */
+    @OnDelete
+    private void deleteWImagen() {
+        WBlob wImagenToDelete = wImagen();
+        if (wImagenToDelete != null) {
+            if (wImagenToDelete.file != null && wImagenToDelete.file.exists()) {
+                wImagenToDelete.file.delete();
+            }
+            wImagenToDelete.delete();
+        }
+    }
+
+    /**
+     * Devuelve el {@code WBlob} correspondiente a {@link Imagen#idWImagen};
+     *
+     * @return {@code WBlob} correspondiente
+     */
     public WBlob wImagen() {
         if (this.idWImagen == null) {
             return null;

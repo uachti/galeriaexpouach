@@ -12,8 +12,8 @@
         </div>
         <nav class="main-nav">
             <ul>
-                <a class="cd-upload" href=""><i class="fa fa-sign-out"></i> Cerrar Sesión</a>
-                <a class="cd-upload" href="#"><i class="fa fa-file-image-o"></i> Regresar a Galeria</a>
+                #{secure.check ''}<a class="cd-upload" href="@{Secure.logout()}"><i class="fa fa-sign-out"></i> Cerrar Sesión</a>#{/secure.check}
+                <a class="cd-upload" href="@{Application.index()}"><i class="fa fa-file-image-o"></i> Regresar a Galería</a>
             </ul>
         </nav>
     </header>
