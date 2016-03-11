@@ -47,7 +47,12 @@ header[role=banner] #cd-logo {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 42%;
+  text-align: center;
+  z-index: 3;
+  float: right;
+  left: auto;
+  right: 0;
   -webkit-transform: translateY(-100%);
   -moz-transform: translateY(-100%);
   -ms-transform: translateY(-100%);

@@ -365,14 +365,50 @@ section h1 b {
     color: #c0a672;
 }
 
-.title-section-alt {
-    font-size: 30px !important;
-    margin-top: 115% !important;
+h1.title-section-alt {
+    font-size: 30px;
+    margin-top: 115%;
 }
 
 
 @media (max-width: 1090px) {
     .materialboxed-img {
-        margin-bottom: 10px !important;
+        margin-top: 10px !important;
+    }
+    
+    .title-section1 {
+        top: 1em !important;
+        font-size: 42px !important;
+    }
+    
+    .imagen-central img {
+        margin-top: 12% !important;
+    }
+    
+    .title-section-alt {
+        font-size: 20px !important;
+        margin-top: 5% !important;
+    }
+}
+
+@media (max-width: 768px) {  
+    .centrado {
+        margin-top: 20% !important;
+    }
+    
+    .title-section1 {
+        top: .2em !important;
+        font-size: 32px !important;
+    }
+    
+    .imagen-central img {
+        margin-top: 12% !important;
+        width: 150px;
+        height: 150px;
+    }
+    
+    .title-section-alt {
+        font-size: 20px !important;
+        margin-top: 5% !important;
     }
 }
