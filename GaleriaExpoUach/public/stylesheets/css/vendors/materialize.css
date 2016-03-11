@@ -2492,7 +2492,7 @@ form p:last-child {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  background: rgba(255,255,255,.9);
+  background: rgba(41, 41, 41,.1) !important;
   -webkit-transition: visibility 0s 0.3s, opacity 0.3s 0s, z-index 0s 0.3s;
   -moz-transition: visibility 0s 0.3s, opacity 0.3s 0s, z-index 0s 0.3s;
   transition: visibility 0s 0.3s, opacity 0.3s 0s, z-index 0s 0.3s;
@@ -2507,11 +2507,11 @@ form p:last-child {
   height: 60px;
   pointer-events: none;
   background: transparent;
-  //background: -webkit-linear-gradient( bottom , #34383c, rgba(52, 56, 60, 0));
-  //background: linear-gradient(to top, #34383c, rgba(52, 56, 60, 0));
+  background: -webkit-linear-gradient( bottom , #34383c, rgba(52, 56, 60, 0));
+  background: linear-gradient(to top, #34383c, rgba(52, 56, 60, 0));
 }
 .cd-modal .cd-modal-content {
-  height: auto;//100%;
+  height: 100%;
   width: 100%;
   padding: 3em 5%;
   text-align: left;
@@ -2519,43 +2519,12 @@ form p:last-child {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-.modal-img {
-    position: relative;
-    display: block;
-    //width: 1026px;
-    //height: 545px;
+.cd-modal p {
+  color: #eee;
+  line-height: 1.6;
+  margin: 2em 0;
+  text-align: center;
 }
-
-.modal-img img,
-.modal-img image-big img {
-    margin: 0 auto;
-    display: block;
-    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
-    -webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
-}
-
-.cd-modal-content p {
-    font-size: 16px;
-    color: #463353 !important;
-    line-height: 20px;
-    position: relative;
-}
-
-.cd-modal-content p {
-    left: 0 !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    right: 0 !important;
-    width: auto !important;
-    max-width: : auto !important;
-    text-align: center !important;
-}
-
-.description-img {
-    
-}
-
 .modal-is-visible .cd-modal {
   z-index: 1;
   visibility: visible;
@@ -2569,18 +2538,18 @@ form p:last-child {
   -webkit-overflow-scrolling: touch;
 }
 @media only screen and (min-width: 768px) {
-  /*.cd-modal .cd-modal-content {
+  .cd-modal .cd-modal-content {
     padding: 4em 10%;
-  }*/
+  }
 }
 @media only screen and (min-width: 1170px) {
-  /*.cd-modal .cd-modal-content {
+  .cd-modal .cd-modal-content {
     padding: 6em 20%;
   }
   .cd-modal p {
     font-size: 2rem;
     line-height: 2;
-  }*/
+  }
 }
 
 .cd-modal-action {
@@ -2589,7 +2558,7 @@ form p:last-child {
 .cd-modal-action .btn, .cd-modal-action .cd-modal-bg {
   display: inline-block;
   height: 4em;
-  background-color: #fff;//#34383c;
+  background-color: #34383c;
 }
 .cd-modal-action .btn {
   width: 12.5em;
@@ -2669,7 +2638,7 @@ form p:last-child {
   transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
 }
 .no-touch .cd-modal-close:hover {
-  background-color: rgba(192, 57, 43,.8);//rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .modal-is-visible .cd-modal-close {
   visibility: visible;
@@ -2684,7 +2653,7 @@ form p:last-child {
   transform: scale(1);
 }
 @media only screen and (min-width: 768px) {
-  /*.cd-modal-close {
+  .cd-modal-close {
     top: 70px;
-  }*/
+  }
 }
