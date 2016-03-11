@@ -1,4 +1,24 @@
 $(document).ready(function($){
+    
+    $.material.init();
+    
+    $.material.ripples();
+    
+    $.material.input();
+    
+    $('.materialboxed').materialbox();
+    
+    $('.material-placeholder').addClass('img-center');
+    
+    var animationImg = 'show-img animated rollIn delay-1';
+    
+    $('.imagen-central').addClass(animationImg);
+    
+
+    /*var animationText = 'show-img animated fadeIn delay-1';
+    $('.title-section1').addClass(animationText);
+    $('.title-section-alt').addClass(animationText);*/
+    
     /******************** VERTICAL FIXED NAVIGATION ********************/
     var contentSections = $('.cd-section'),
             navigationItems = $('#cd-vertical-nav a');
@@ -250,14 +270,6 @@ $(document).ready(function($){
             animateLayer(section.find('.cd-modal-bg'), 1, false);
     }
     /******************** END MODAL MORPHING ********************/
-    
-    $.material.init();
-    $.material.ripples();
-    $.material.input();
-    
-    $('.materialboxed').materialbox();
-   
-    $('.material-placeholder').addClass('img-center');
 });
 
 //credits http://css-tricks.com/snippets/jquery/move-cursor-to-end-of-textarea-or-input/
