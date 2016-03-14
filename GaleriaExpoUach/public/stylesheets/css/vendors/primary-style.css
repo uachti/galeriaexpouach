@@ -149,3 +149,16 @@ footer .container p a {
 .show-img {
     display: block !important;
 }
+
+.alert {
+    margin-bottom: 0px !important;
+    border-radius: 0 !important;
+}
+
+.alert.alert-danger {
+    background-color: rgba(192, 57, 43,.8) !important;
+}
+
+.alert.alert-success {
+    background-color: #27ae60 !important;
+}
